@@ -1,0 +1,925 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width,initial-scale=1.0"/>
+  <title>Catálogo de Ebooks | Store Invictus</title>
+  <link rel="icon" type="image/png" sizes="32x32" href="assets/img/logo.png">
+  <meta name="theme-color" content="#E8001D">
+  <meta name="description" content="Catálogo completo de ebooks de marketing digital, tráfego pago, copywriting, finanças e muito mais. Conteúdo próprio da Store Invictus.">
+  <meta name="robots" content="index, follow">
+  <link rel="canonical" href="https://storeinvictus.com.br/ebooks.html">
+  <meta property="og:title" content="Catálogo de Ebooks | Store Invictus">
+  <meta property="og:description" content="Ebooks digitais próprios em diversas categorias. Conteúdo próprio, acesso imediato via Hotmart.">
+  <meta property="og:url" content="https://storeinvictus.com.br/ebooks.html">
+  <meta property="og:image" content="https://storeinvictus.com.br/assets/img/logo.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=DM+Sans:wght@300;400;500;600;700;900&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css">
+  <style>
+    /* Hero da página */
+    .page-hero{padding:140px 0 60px;position:relative;overflow:hidden;text-align:center}
+    .bg-radials{position:absolute;inset:0;pointer-events:none;background:radial-gradient(ellipse 70% 60% at 0% 40%,rgba(232,0,29,.1),transparent 55%),radial-gradient(ellipse 50% 50% at 100% 10%,rgba(0,230,118,.07),transparent 50%)}
+    .bg-grid{position:absolute;inset:0;pointer-events:none;background-image:linear-gradient(rgba(255,255,255,.022) 1px,transparent 1px),linear-gradient(90deg,rgba(255,255,255,.022) 1px,transparent 1px);background-size:44px 44px;mask-image:radial-gradient(ellipse 90% 90% at 50% 50%,black 20%,transparent 100%)}
+    .page-hero-inner{position:relative;z-index:1}
+    .page-hero h1{font-family:'Bebas Neue',sans-serif;font-size:clamp(42px,7vw,80px);letter-spacing:2px;margin:14px 0 16px;line-height:1.0}
+    .page-hero p{font-size:16px;color:#6e6e6e;max-width:520px;margin:0 auto;line-height:1.8}
+    .txt-grad{background:linear-gradient(90deg,#FF1535,#00E676);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text}
+    .txt-R{color:#FF1535}
+
+    /* Botões */
+    .btn{display:inline-flex;align-items:center;justify-content:center;gap:8px;padding:13px 32px;border-radius:4px;font-weight:700;font-size:13px;letter-spacing:1.5px;text-transform:uppercase;border:none;transition:all .3s;white-space:nowrap;position:relative;overflow:hidden;font-family:'DM Sans',sans-serif;cursor:pointer;text-decoration:none}
+    .btn::before{content:'';position:absolute;top:0;left:-100%;width:60%;height:100%;background:linear-gradient(90deg,transparent,rgba(255,255,255,.13),transparent);transform:skewX(-20deg);transition:left .5s}
+    .btn:hover::before{left:150%}
+    .btn-primary{background:linear-gradient(135deg,#FF1535,#A80015);color:#fff;box-shadow:0 4px 24px rgba(232,0,29,.4)}
+    .btn-primary:hover{transform:translateY(-2px);box-shadow:0 12px 36px rgba(232,0,29,.5)}
+    .btn-outline{background:transparent;color:#fff;border:1px solid rgba(255,255,255,.12)}
+    .btn-outline:hover{border-color:#E8001D;color:#FF1535;background:rgba(232,0,29,.05);transform:translateY(-2px)}
+
+    /* ── FILTROS ── */
+    .filtros-wrap{margin-bottom:44px}
+    .filtros-lista{display:flex;flex-wrap:wrap;gap:10px;justify-content:center}
+    .filtro-btn{
+      padding:8px 20px;border-radius:2px;
+      font-size:12px;font-weight:700;letter-spacing:1.5px;text-transform:uppercase;
+      background:rgba(255,255,255,.04);border:1px solid rgba(255,255,255,.08);
+      color:#6e6e6e;cursor:pointer;transition:all .2s;font-family:'DM Sans',sans-serif;
+    }
+    .filtro-btn:hover{color:#fff;border-color:rgba(255,255,255,.2)}
+    .filtro-btn.active{
+      background:rgba(232,0,29,.1);border-color:rgba(232,0,29,.35);
+      color:#FF1535;box-shadow:0 0 12px rgba(232,0,29,.15);
+    }
+
+    /* Contador */
+    .catalog-header{display:flex;align-items:center;justify-content:space-between;margin-bottom:28px;flex-wrap:wrap;gap:12px}
+    .catalog-count{font-size:13px;color:#6e6e6e}
+    .catalog-count strong{color:#fff}
+
+    /* ── GRID DE EBOOKS ── */
+    .ebooks-grid{
+      display:grid;
+      grid-template-columns:repeat(3,1fr);
+      gap:20px;
+    }
+
+    /* ── CARD ── */
+    .eb-card{
+      background:#0D0D0D;
+      border:1px solid rgba(255,255,255,.07);
+      border-radius:20px;
+      overflow:hidden;
+      display:flex;
+      flex-direction:column;
+      position:relative;
+      transition:transform .28s cubic-bezier(.2,.8,.2,1), border-color .28s, box-shadow .28s;
+      cursor:default;
+    }
+    .eb-card::before{
+      content:'';position:absolute;inset:0;border-radius:20px;
+      background:radial-gradient(ellipse 80% 60% at 50% 0%,rgba(232,0,29,.06),transparent 70%);
+      pointer-events:none;opacity:0;transition:opacity .3s;
+    }
+    .eb-card:hover{
+      transform:translateY(-6px);
+      border-color:rgba(232,0,29,.25);
+      box-shadow:0 20px 60px rgba(0,0,0,.6), 0 0 0 1px rgba(232,0,29,.12);
+    }
+    .eb-card:hover::before{opacity:1}
+    .eb-card[data-categoria].hidden{display:none}
+
+    /* Linha topo — aparece no hover */
+    .eb-card::after{
+      content:'';position:absolute;top:0;left:0;right:0;height:2px;
+      background:linear-gradient(90deg,#E8001D,#FF6B35,#00E676);
+      transform:scaleX(0);transform-origin:left;
+      transition:transform .4s cubic-bezier(.2,.8,.2,1);
+      z-index:2;
+    }
+    .eb-card:hover::after{transform:scaleX(1)}
+
+    /* ── IMAGEM DA CAPA ── */
+    .eb-thumb{
+      position:relative;
+      height:220px;
+      overflow:hidden;
+      background:#111;
+      flex-shrink:0;
+      display:flex;align-items:center;justify-content:center;
+    }
+    .eb-thumb img{
+      width:100%;height:100%;
+      object-fit:contain;
+      padding:20px;
+      max-height:210px;
+      transition:transform .4s cubic-bezier(.2,.8,.2,1);
+    }
+    .eb-card:hover .eb-thumb img{transform:scale(1.04)}
+    .eb-thumb-fb{
+      width:100%;height:100%;
+      display:flex;align-items:center;justify-content:center;
+      font-size:72px;
+    }
+
+    /* Badge categoria — canto superior esquerdo */
+    .eb-badge-cat{
+      position:absolute;top:12px;left:12px;z-index:2;
+      font-size:9px;font-weight:800;letter-spacing:1.5px;
+      padding:4px 11px;border-radius:3px;
+      text-transform:uppercase;
+      backdrop-filter:blur(8px);
+    }
+
+    /* ── CORPO DO CARD ── */
+    .eb-body{
+      padding:22px 22px 20px;
+      flex:1;
+      display:flex;flex-direction:column;
+      gap:0;
+    }
+
+    /* Categoria textual */
+    .eb-cat-lbl{
+      font-size:10px;font-weight:800;
+      letter-spacing:2px;text-transform:uppercase;
+      color:#E8001D;
+      margin-bottom:8px;
+      display:flex;align-items:center;gap:6px;
+    }
+    .eb-cat-lbl::before{
+      content:'';display:inline-block;
+      width:16px;height:2px;
+      background:#E8001D;border-radius:2px;
+      flex-shrink:0;
+    }
+
+    /* Título — principal, precisa dominar */
+    .eb-title{
+      font-family:'Bebas Neue',sans-serif;
+      font-size:24px;
+      letter-spacing:1px;
+      line-height:1.1;
+      color:#fff;
+      margin-bottom:10px;
+    }
+
+    /* Descrição */
+    .eb-desc{
+      font-size:13.5px;
+      color:#888;
+      line-height:1.75;
+      margin-bottom:18px;
+      flex:1;
+    }
+
+    /* Tags */
+    .eb-tags{
+      display:flex;flex-wrap:wrap;gap:6px;
+      margin-bottom:20px;
+    }
+    .eb-tag{
+      font-size:10px;font-weight:700;
+      padding:4px 11px;border-radius:100px;
+      background:rgba(255,255,255,.04);
+      color:#666;
+      border:1px solid rgba(255,255,255,.08);
+      letter-spacing:.5px;
+      text-transform:uppercase;
+    }
+
+    /* ── RODAPÉ DO CARD: preço + botão ── */
+    .eb-footer{
+      border-top:1px solid rgba(255,255,255,.06);
+      padding-top:18px;
+      display:flex;align-items:center;justify-content:space-between;gap:14px;
+    }
+
+    /* Preço */
+    .eb-promise{font-size:12px;color:#00E676;font-weight:700;margin-bottom:8px;line-height:1.3}
+    .eb-price{display:flex;flex-direction:column;gap:2px}
+    .eb-price-label{
+      font-size:9px;font-weight:700;
+      letter-spacing:1.5px;text-transform:uppercase;
+      color:#555;
+    }
+    .eb-price strong{
+      font-family:'Bebas Neue',sans-serif;
+      font-size:34px;
+      color:#fff;
+      line-height:1;
+      letter-spacing:1px;
+    }
+    .eb-price small{
+      font-size:10px;color:#555;margin-top:1px;
+    }
+
+    /* Botão comprar */
+    .eb-btn{
+      display:inline-flex;align-items:center;justify-content:center;gap:7px;
+      padding:13px 22px;
+      border-radius:10px;
+      background:linear-gradient(135deg,#FF1535,#A80015);
+      color:#fff;
+      font-weight:800;font-size:12px;
+      text-decoration:none;
+      letter-spacing:1px;text-transform:uppercase;
+      box-shadow:0 4px 20px rgba(232,0,29,.35);
+      transition:all .25s cubic-bezier(.2,.8,.2,1);
+      white-space:nowrap;flex-shrink:0;
+      position:relative;overflow:hidden;
+    }
+    .eb-btn::before{
+      content:'';position:absolute;
+      top:0;left:-60%;width:40%;height:100%;
+      background:linear-gradient(90deg,transparent,rgba(255,255,255,.15),transparent);
+      transform:skewX(-20deg);
+      transition:left .5s;
+    }
+    .eb-btn:hover::before{left:130%}
+    .eb-btn:hover{
+      box-shadow:0 8px 32px rgba(232,0,29,.55);
+      transform:translateY(-2px);
+    }
+    .eb-btn svg{width:14px;height:14px;fill:none;stroke:#fff;stroke-width:2.2;stroke-linecap:round;stroke-linejoin:round}
+
+    /* ── EMPTY STATE ── */
+    .empty-state{
+      grid-column:1/-1;text-align:center;padding:80px 24px;
+      background:#0D0D0D;border:1px dashed rgba(255,255,255,.08);
+      border-radius:18px;
+    }
+    .empty-state h3{font-family:'Bebas Neue',sans-serif;font-size:28px;letter-spacing:1px;margin:16px 0 8px;color:#555}
+    .empty-state p{font-size:14px;color:#444;margin-bottom:24px}
+
+    /* Reveal */
+    @keyframes fadeUp{from{opacity:0;transform:translateY(24px)}to{opacity:1;transform:translateY(0)}}
+    [data-reveal]{opacity:0}
+    [data-reveal].revealed{animation:fadeUp .55s cubic-bezier(0,0,.2,1) forwards}
+
+    /* ── RESPONSIVO ── */
+    @media(max-width:1024px){
+      .ebooks-grid{grid-template-columns:repeat(2,1fr);gap:18px}
+    }
+
+    /* MOBILE — card horizontal: capa esquerda, info direita */
+    @media(max-width:600px){
+      .ebooks-grid{grid-template-columns:1fr;gap:14px}
+
+      .eb-card{flex-direction:row;border-radius:16px;align-items:stretch}
+      .eb-card::after{top:0;left:0;right:auto;bottom:0;width:3px;height:auto;
+        transform:scaleY(0);transform-origin:top;
+        background:linear-gradient(180deg,#E8001D,#00E676);
+      }
+      .eb-card:hover::after{transform:scaleY(1)}
+
+      .eb-thumb{
+        width:110px;min-width:110px;height:auto;
+        border-radius:16px 0 0 16px;
+        flex-direction:column;
+      }
+      .eb-thumb img{padding:10px;object-fit:contain}
+      .eb-thumb-fb{font-size:48px}
+      .eb-badge-cat{font-size:8px;padding:3px 8px;top:8px;left:8px}
+
+      .eb-body{padding:16px 16px 16px;gap:0}
+      .eb-cat-lbl{font-size:9px;margin-bottom:5px}
+      .eb-title{font-size:18px;margin-bottom:6px;letter-spacing:.5px}
+      .eb-desc{font-size:12.5px;margin-bottom:12px;-webkit-line-clamp:3;display:-webkit-box;-webkit-box-orient:vertical;overflow:hidden}
+      .eb-tags{margin-bottom:14px;gap:4px}
+      .eb-tag{font-size:9px;padding:3px 9px}
+
+      .eb-footer{padding-top:12px;gap:10px}
+      .eb-price strong{font-size:26px}
+      .eb-price small{font-size:9px}
+      .eb-btn{padding:10px 16px;font-size:11px;border-radius:8px;gap:5px}
+
+      .filtro-btn{font-size:11px;padding:7px 13px}
+    }
+
+    @media(max-width:380px){
+      .eb-thumb{width:90px;min-width:90px}
+      .eb-title{font-size:16px}
+    }
+  </style>
+</head>
+<body>
+  <a href="#main-content" class="skip-link">Ir para o conteúdo</a>
+
+  <!-- NAVBAR -->
+  <nav class="navbar" id="navbar">
+    <div class="container nav-inner">
+      <a href="index.html" class="logo">
+        <img src="assets/img/logo.png" alt="Store Invictus" class="logo-img" width="38" height="38">
+        <div class="logo-text"><span class="logo-store">STORE</span><span class="logo-invictus">INVICT<span class="hl">US</span></span></div>
+      </a>
+      <ul class="nav-links">
+        <li><a href="index.html">Início</a></li>
+        <li><a href="ebooks.html" class="active">Ebooks</a></li>
+        <li><a href="sobre.html">Sobre</a></li>
+        <li><a href="contato.html">Contato</a></li>
+        <li><a href="ebooks.html" class="btn-nav">Ver Ebooks</a></li>
+      </ul>
+      <button class="hamburger" id="hamburger" aria-label="Abrir menu" aria-expanded="false"><span></span><span></span><span></span></button>
+    </div>
+  </nav>
+  <nav class="mobile-menu" id="mobile-menu">
+    <a href="index.html">Início</a>
+    <a href="ebooks.html">Ebooks</a>
+    <a href="sobre.html">Sobre</a>
+    <a href="contato.html">Contato</a>
+    <a href="ebooks.html" class="btn-nav">Ver Ebooks →</a>
+  </nav>
+
+  <main id="main-content">
+
+    <!-- Hero -->
+    <section class="page-hero">
+      <div class="bg-radials"></div>
+      <div class="bg-grid"></div>
+      <div class="page-hero-inner">
+        <span style="display:inline-flex;align-items:center;gap:6px;padding:4px 12px;border-radius:2px;background:rgba(232,0,29,.1);color:#FF1535;border:1px solid rgba(232,0,29,.28);font-size:10px;font-weight:700;letter-spacing:2px;text-transform:uppercase">📚 12 Ebooks · R$ 15 cada</span>
+        <div style="display:flex;gap:4px;width:44px;height:3px;margin:10px auto 16px"><div style="flex:1;background:#E8001D;border-radius:2px"></div><div style="flex:1;background:#00E676;border-radius:2px"></div></div>
+        <h1>ESCOLHA O SEU.<br><span class="txt-grad">APLIQUE HOJE.</span></h1>
+        <p>12 ebooks por <strong style="color:#fff">R$ 15 cada</strong>. Acesso imediato, acesso vitalício, pagamento seguro via Hotmart.</p>
+      <div style="display:flex;align-items:center;justify-content:center;gap:24px;flex-wrap:wrap;margin-top:24px">
+        <div style="display:flex;align-items:center;gap:7px;font-size:12px;color:#6e6e6e"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#00E676" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>Acesso imediato</div>
+        <div style="display:flex;align-items:center;gap:7px;font-size:12px;color:#6e6e6e"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#00E676" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>Pagamento seguro via Hotmart</div>
+        <div style="display:flex;align-items:center;gap:7px;font-size:12px;color:#6e6e6e"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#00E676" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>Garantia de 7 dias</div>
+        <div style="display:flex;align-items:center;gap:7px;font-size:12px;color:#6e6e6e"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#00E676" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>Funciona no celular</div>
+      </div>
+      </div>
+    </section>
+
+    <!-- Catálogo -->
+    <section class="section" style="padding-top:20px;padding-bottom:100px">
+      <div class="container">
+
+        <!-- Filtros -->
+        <div class="filtros-wrap" data-reveal>
+          <div class="filtros-lista" id="filtros">
+            <button class="filtro-btn active" data-cat="todos">Todos</button>
+            <button class="filtro-btn" data-cat="marketing">📈 Marketing Digital</button>
+            <button class="filtro-btn" data-cat="trafego">🎯 Tráfego Pago</button>
+            <button class="filtro-btn" data-cat="copy">✍️ Copywriting</button>
+            <button class="filtro-btn" data-cat="financas">💰 Finanças</button>
+            <button class="filtro-btn" data-cat="afiliados">🤝 Afiliados</button>
+            <button class="filtro-btn" data-cat="empreendedorismo">🚀 Empreendedorismo</button>
+            <button class="filtro-btn" data-cat="redes">📱 Redes Sociais</button>
+            <button class="filtro-btn" data-cat="outros">⚡ Outros</button>
+          </div>
+        </div>
+
+        <!-- Header do catálogo -->
+        <div class="catalog-header">
+          <div class="catalog-count">Exibindo <strong id="count-num">0</strong> ebooks</div>
+        </div>
+
+        <!-- Grid de ebooks -->
+        <div class="ebooks-grid" id="ebooks-grid">
+
+          <!-- ═══════════════════════════════════════════════════════
+               EBOOKS SERÃO ADICIONADOS AQUI
+               Modelo de card para copiar ao adicionar cada ebook:
+
+               <article class="eb-card" data-categoria="CATEGORIA">
+                 <div class="eb-thumb" style="background:linear-gradient(145deg,rgba(232,0,29,.2),rgba(0,0,0,.8))">
+                   <img src="URL_CAPA" alt="NOME_EBOOK"
+                     style="display:none" onload="this.style.display='block';this.nextElementSibling.style.display='none'"
+                     onerror="this.style.display='none';this.nextElementSibling.style.display='flex'">
+                   <div class="eb-thumb-fb" style="display:flex">📚</div>
+                   <span class="eb-badge-cat" style="background:rgba(232,0,29,.85);color:#fff">CATEGORIA</span>
+                 </div>
+                 <div class="eb-body">
+                   <div class="eb-cat-lbl">CATEGORIA</div>
+                   <h2 class="eb-title">NOME DO EBOOK</h2>
+                   <p class="eb-desc">Descrição curta e direta do conteúdo.</p>
+                   <div class="eb-tags">
+                     <span class="eb-tag">Tag 1</span>
+                     <span class="eb-tag">Tag 2</span>
+                   </div>
+                   <div class="eb-footer">
+                     <div class="eb-price">
+                       <strong>R$ XX,XX</strong>
+                       <small>Acesso vitalício via Hotmart</small>
+                     </div>
+                     <a href="LINK_HOTMART" target="_blank" rel="noopener" class="eb-btn">🛒 COMPRAR</a>
+                   </div>
+                 </div>
+               </article>
+
+               Valores válidos para data-categoria:
+               marketing | trafego | copy | financas | afiliados | empreendedorismo | redes | outros
+          ═══════════════════════════════════════════════════════ -->
+
+          <!-- ═══ EBOOKS ═══ -->
+
+          <article class="eb-card" data-categoria="outros" data-reveal>
+            <div class="eb-thumb" style="background:linear-gradient(160deg,#1a0a00,#0f0f0f)">
+              <img src="https://static-media.hotmart.com/jX18NPfaoeK2EBoucRvwEn3C-Vo=/300x300/filters:quality(100)/hotmart/product_pictures/eb0cfb53-8c0c-4b4d-b3c0-4285538726b8/AcordeAgora.png"
+                alt="Acorde Agora"
+                style="display:none" onload="this.style.display='block';this.nextElementSibling.style.display='none'"
+                onerror="this.style.display='none';this.nextElementSibling.style.display='flex'">
+              <div class="eb-thumb-fb" style="display:flex">🌅</div>
+              <span class="eb-badge-cat" style="background:rgba(232,0,29,.9);color:#fff">Mindset</span>
+            </div>
+            <div class="eb-body">
+              <div class="eb-cat-lbl">🌅 Mindset</div>
+              <h2 class="eb-title">Acorde Agora</h2>
+              <p class="eb-promise">➜ Transforme sua manhã em 7 dias</p>
+              <p class="eb-desc">Transforme sua manhã, sua mentalidade e dê a virada que sua vida está pedindo — com um guia direto ao ponto.</p>
+              <div class="eb-tags">
+                <span class="eb-tag">Mindset</span>
+                <span class="eb-tag">Motivação</span>
+                <span class="eb-tag">Rotina</span>
+              </div>
+              <div class="eb-footer">
+                <div class="eb-price">
+                  <span class="eb-price-label">Preço</span>
+                  <strong>R$ 15</strong>
+                  <small>Acesso vitalício · Hotmart</small>
+                </div>
+                <a href="https://pay.hotmart.com/U104676078W" target="_blank" rel="noopener" class="eb-btn">
+                  <svg viewBox="0 0 24 24"><path d="M6 2L3 6v14a2 2 0 002 2h14a2 2 0 002-2V6l-3-4z"/><line x1="3" y1="6" x2="21" y2="6"/><path d="M16 10a4 4 0 01-8 0"/></svg>
+                  Comprar
+                </a>
+              </div>
+            </div>
+          </article>
+
+          <article class="eb-card" data-categoria="outros" data-reveal>
+            <div class="eb-thumb" style="background:linear-gradient(160deg,#001a0a,#0f0f0f)">
+              <img src="https://static-media.hotmart.com/5txEz0oVOEvBm-wIABbR31G75og=/300x300/filters:quality(100)/hotmart/product_pictures/271aaa72-f466-472e-b506-0101c9d28841/AdestramentoFacildeCaes.png"
+                alt="Adestramento Fácil de Cães"
+                style="display:none" onload="this.style.display='block';this.nextElementSibling.style.display='none'"
+                onerror="this.style.display='none';this.nextElementSibling.style.display='flex'">
+              <div class="eb-thumb-fb" style="display:flex">🐕</div>
+              <span class="eb-badge-cat" style="background:rgba(0,160,80,.9);color:#fff">Pets</span>
+            </div>
+            <div class="eb-body">
+              <div class="eb-cat-lbl" style="color:#00A152">🐕 Pets</div>
+              <h2 class="eb-title">Adestramento Fácil de Cães</h2>
+              <p class="eb-promise">➜ Cão obediente sem contratar adestrador</p>
+              <p class="eb-desc">Adestre seu cão do zero com técnicas simples e eficazes — sem precisar de profissional.</p>
+              <div class="eb-tags">
+                <span class="eb-tag">Pets</span>
+                <span class="eb-tag">Cães</span>
+                <span class="eb-tag">Adestramento</span>
+              </div>
+              <div class="eb-footer">
+                <div class="eb-price">
+                  <span class="eb-price-label">Preço</span>
+                  <strong>R$ 15</strong>
+                  <small>Acesso vitalício · Hotmart</small>
+                </div>
+                <a href="https://pay.hotmart.com/N104678903K" target="_blank" rel="noopener" class="eb-btn">
+                  <svg viewBox="0 0 24 24"><path d="M6 2L3 6v14a2 2 0 002 2h14a2 2 0 002-2V6l-3-4z"/><line x1="3" y1="6" x2="21" y2="6"/><path d="M16 10a4 4 0 01-8 0"/></svg>
+                  Comprar
+                </a>
+              </div>
+            </div>
+          </article>
+
+          <article class="eb-card" data-categoria="outros" data-reveal>
+            <div class="eb-thumb" style="background:linear-gradient(160deg,#12001a,#0f0f0f)">
+              <img src="https://static-media.hotmart.com/q-FXXQKZYK8aDEq47Qu1CN3Ii-k=/300x300/filters:quality(100)/hotmart/product_pictures/8250458c-a005-4d06-b6bf-292ed654fa9d/Capa2D.png"
+                alt="101 Dicas Para Ser Mais Produtivo"
+                style="display:none" onload="this.style.display='block';this.nextElementSibling.style.display='none'"
+                onerror="this.style.display='none';this.nextElementSibling.style.display='flex'">
+              <div class="eb-thumb-fb" style="display:flex">⚡</div>
+              <span class="eb-badge-cat" style="background:rgba(232,0,29,.9);color:#fff">Produtividade</span>
+            </div>
+            <div class="eb-body">
+              <div class="eb-cat-lbl">⚡ Produtividade</div>
+              <h2 class="eb-title">101 Dicas para Ser Mais Produtivo</h2>
+              <p class="eb-promise">➜ Faça mais em menos tempo, a partir de hoje</p>
+              <p class="eb-desc">101 dicas práticas para aumentar sua produtividade, organizar sua rotina e fazer mais em menos tempo.</p>
+              <div class="eb-tags">
+                <span class="eb-tag">Produtividade</span>
+                <span class="eb-tag">Rotina</span>
+                <span class="eb-tag">Foco</span>
+              </div>
+              <div class="eb-footer">
+                <div class="eb-price">
+                  <span class="eb-price-label">Preço</span>
+                  <strong>R$ 15</strong>
+                  <small>Acesso vitalício · Hotmart</small>
+                </div>
+                <a href="https://pay.hotmart.com/O104675724P" target="_blank" rel="noopener" class="eb-btn">
+                  <svg viewBox="0 0 24 24"><path d="M6 2L3 6v14a2 2 0 002 2h14a2 2 0 002-2V6l-3-4z"/><line x1="3" y1="6" x2="21" y2="6"/><path d="M16 10a4 4 0 01-8 0"/></svg>
+                  Comprar
+                </a>
+              </div>
+            </div>
+          </article>
+
+          <article class="eb-card" data-categoria="outros" data-reveal>
+            <div class="eb-thumb" style="background:linear-gradient(160deg,#001a0a,#0f0f0f)">
+              <img src="https://static-media.hotmart.com/Qg-9SX4FKjBsheK0q7CgUYFaQPc=/300x300/filters:quality(100)/hotmart/product_pictures/969677ba-fad4-4e7c-b32d-2ca43d78fb2f/AlimentosCaseirosParaAnimais.png"
+                alt="Alimentos Caseiros Para Animais"
+                style="display:none" onload="this.style.display='block';this.nextElementSibling.style.display='none'"
+                onerror="this.style.display='none';this.nextElementSibling.style.display='flex'">
+              <div class="eb-thumb-fb" style="display:flex">🍖</div>
+              <span class="eb-badge-cat" style="background:rgba(0,160,80,.9);color:#fff">Pets</span>
+            </div>
+            <div class="eb-body">
+              <div class="eb-cat-lbl" style="color:#00A152">🍖 Pets</div>
+              <h2 class="eb-title">Alimentos Caseiros Para Animais</h2>
+              <p class="eb-promise">➜ Alimente seu pet melhor gastando menos</p>
+              <p class="eb-desc">Aprenda a preparar refeições caseiras nutritivas e saudáveis para seus pets, com ingredientes simples e de baixo custo.</p>
+              <div class="eb-tags">
+                <span class="eb-tag">Pets</span>
+                <span class="eb-tag">Nutrição</span>
+                <span class="eb-tag">Saúde Animal</span>
+              </div>
+              <div class="eb-footer">
+                <div class="eb-price">
+                  <span class="eb-price-label">Preço</span>
+                  <strong>R$ 15</strong>
+                  <small>Acesso vitalício · Hotmart</small>
+                </div>
+                <a href="https://pay.hotmart.com/A104696096A" target="_blank" rel="noopener" class="eb-btn">
+                  <svg viewBox="0 0 24 24"><path d="M6 2L3 6v14a2 2 0 002 2h14a2 2 0 002-2V6l-3-4z"/><line x1="3" y1="6" x2="21" y2="6"/><path d="M16 10a4 4 0 01-8 0"/></svg>
+                  Comprar
+                </a>
+              </div>
+            </div>
+          </article>
+
+          <article class="eb-card" data-categoria="financas" data-reveal>
+            <div class="eb-thumb" style="background:linear-gradient(160deg,#001412,#0f0f0f)">
+              <img src="https://static-media.hotmart.com/sveNJuSHAkBWnKxBQ39nLBHBbpM=/300x300/filters:quality(100)/hotmart/product_pictures/2d784193-741d-4fe7-8093-50721f85a8a0/CapacitacaoFinanceira.png"
+                alt="Capacitação Financeira"
+                style="display:none" onload="this.style.display='block';this.nextElementSibling.style.display='none'"
+                onerror="this.style.display='none';this.nextElementSibling.style.display='flex'">
+              <div class="eb-thumb-fb" style="display:flex">💰</div>
+              <span class="eb-badge-cat" style="background:rgba(0,160,80,.9);color:#fff">Finanças</span>
+            </div>
+            <div class="eb-body">
+              <div class="eb-cat-lbl" style="color:#00A152">💰 Finanças</div>
+              <h2 class="eb-title">Capacitação Financeira</h2>
+              <p class="eb-promise">➜ Pare de perder dinheiro sem perceber</p>
+              <p class="eb-desc">Domine sua vida financeira com conceitos práticos de educação financeira, investimentos e controle de gastos.</p>
+              <div class="eb-tags">
+                <span class="eb-tag">Finanças</span>
+                <span class="eb-tag">Investimentos</span>
+                <span class="eb-tag">Renda</span>
+              </div>
+              <div class="eb-footer">
+                <div class="eb-price">
+                  <span class="eb-price-label">Preço</span>
+                  <strong>R$ 15</strong>
+                  <small>Acesso vitalício · Hotmart</small>
+                </div>
+                <a href="https://pay.hotmart.com/I104696196E" target="_blank" rel="noopener" class="eb-btn">
+                  <svg viewBox="0 0 24 24"><path d="M6 2L3 6v14a2 2 0 002 2h14a2 2 0 002-2V6l-3-4z"/><line x1="3" y1="6" x2="21" y2="6"/><path d="M16 10a4 4 0 01-8 0"/></svg>
+                  Comprar
+                </a>
+              </div>
+            </div>
+          </article>
+
+          <article class="eb-card" data-categoria="outros" data-reveal>
+            <div class="eb-thumb" style="background:linear-gradient(160deg,#0a001a,#0f0f0f)">
+              <img src="https://static-media.hotmart.com/E6mqnp0JSwbNX4BD8E-kgyBmPUw=/300x300/filters:quality(100)/hotmart/product_pictures/45fc5a7c-b2a2-4c33-835f-73541c74b802/ComoDerrotaraAnsiedade.png"
+                alt="Como Derrotar a Ansiedade"
+                style="display:none" onload="this.style.display='block';this.nextElementSibling.style.display='none'"
+                onerror="this.style.display='none';this.nextElementSibling.style.display='flex'">
+              <div class="eb-thumb-fb" style="display:flex">🧠</div>
+              <span class="eb-badge-cat" style="background:rgba(232,0,29,.9);color:#fff">Saúde Mental</span>
+            </div>
+            <div class="eb-body">
+              <div class="eb-cat-lbl">🧠 Saúde Mental</div>
+              <h2 class="eb-title">Como Derrotar a Ansiedade</h2>
+              <p class="eb-promise">➜ Retome o controle da sua mente</p>
+              <p class="eb-desc">Técnicas e estratégias comprovadas para identificar, enfrentar e superar a ansiedade no dia a dia.</p>
+              <div class="eb-tags">
+                <span class="eb-tag">Ansiedade</span>
+                <span class="eb-tag">Saúde Mental</span>
+                <span class="eb-tag">Bem-estar</span>
+              </div>
+              <div class="eb-footer">
+                <div class="eb-price">
+                  <span class="eb-price-label">Preço</span>
+                  <strong>R$ 15</strong>
+                  <small>Acesso vitalício · Hotmart</small>
+                </div>
+                <a href="https://pay.hotmart.com/S104696247H" target="_blank" rel="noopener" class="eb-btn">
+                  <svg viewBox="0 0 24 24"><path d="M6 2L3 6v14a2 2 0 002 2h14a2 2 0 002-2V6l-3-4z"/><line x1="3" y1="6" x2="21" y2="6"/><path d="M16 10a4 4 0 01-8 0"/></svg>
+                  Comprar
+                </a>
+              </div>
+            </div>
+          </article>
+
+          <article class="eb-card" data-categoria="outros" data-reveal>
+            <div class="eb-thumb" style="background:linear-gradient(160deg,#001a0a,#0f0f0f)">
+              <img src="https://static-media.hotmart.com/tl9B-xBRecoePE6a1xth0D2m3Do=/300x300/filters:quality(100)/hotmart/product_pictures/f47a7f5b-802c-4b99-bc1f-fc782270f9e2/ComoTreinarSeuGato.png"
+                alt="Como Treinar Seu Gato"
+                style="display:none" onload="this.style.display='block';this.nextElementSibling.style.display='none'"
+                onerror="this.style.display='none';this.nextElementSibling.style.display='flex'">
+              <div class="eb-thumb-fb" style="display:flex">🐱</div>
+              <span class="eb-badge-cat" style="background:rgba(0,160,80,.9);color:#fff">Pets</span>
+            </div>
+            <div class="eb-body">
+              <div class="eb-cat-lbl" style="color:#00A152">🐱 Pets</div>
+              <h2 class="eb-title">Como Treinar Seu Gato</h2>
+              <p class="eb-promise">➜ Gato sem maus hábitos em casa</p>
+              <p class="eb-desc">Guia prático para ensinar seu gato a seguir comandos, eliminar maus hábitos e criar um vínculo mais forte com seu pet.</p>
+              <div class="eb-tags">
+                <span class="eb-tag">Gatos</span>
+                <span class="eb-tag">Pets</span>
+                <span class="eb-tag">Treinamento</span>
+              </div>
+              <div class="eb-footer">
+                <div class="eb-price">
+                  <span class="eb-price-label">Preço</span>
+                  <strong>R$ 15</strong>
+                  <small>Acesso vitalício · Hotmart</small>
+                </div>
+                <a href="https://pay.hotmart.com/U104703625X" target="_blank" rel="noopener" class="eb-btn">
+                  <svg viewBox="0 0 24 24"><path d="M6 2L3 6v14a2 2 0 002 2h14a2 2 0 002-2V6l-3-4z"/><line x1="3" y1="6" x2="21" y2="6"/><path d="M16 10a4 4 0 01-8 0"/></svg>
+                  Comprar
+                </a>
+              </div>
+            </div>
+          </article>
+
+          <article class="eb-card" data-categoria="outros" data-reveal>
+            <div class="eb-thumb" style="background:linear-gradient(160deg,#00101a,#0f0f0f)">
+              <img src="https://static-media.hotmart.com/4uQ0LpHZbY8KOOWrrSq4TGmXxhI=/300x300/filters:quality(100)/hotmart/product_pictures/599e8b36-0777-4090-8089-753f5e4ab118/CuidandodePeixesTropicais.jpg"
+                alt="Cuidando de Peixes Tropicais"
+                style="display:none" onload="this.style.display='block';this.nextElementSibling.style.display='none'"
+                onerror="this.style.display='none';this.nextElementSibling.style.display='flex'">
+              <div class="eb-thumb-fb" style="display:flex">🐠</div>
+              <span class="eb-badge-cat" style="background:rgba(0,160,80,.9);color:#fff">Pets</span>
+            </div>
+            <div class="eb-body">
+              <div class="eb-cat-lbl" style="color:#00A152">🐠 Pets</div>
+              <h2 class="eb-title">Cuidando de Peixes Tropicais</h2>
+              <p class="eb-promise">➜ Aquário saudável do zero, sem complicação</p>
+              <p class="eb-desc">Aprenda a montar e manter aquários, escolher as espécies certas e garantir a saúde dos seus peixes tropicais.</p>
+              <div class="eb-tags">
+                <span class="eb-tag">Peixes</span>
+                <span class="eb-tag">Aquário</span>
+                <span class="eb-tag">Pets</span>
+              </div>
+              <div class="eb-footer">
+                <div class="eb-price">
+                  <span class="eb-price-label">Preço</span>
+                  <strong>R$ 15</strong>
+                  <small>Acesso vitalício · Hotmart</small>
+                </div>
+                <a href="https://pay.hotmart.com/V104703712K" target="_blank" rel="noopener" class="eb-btn">
+                  <svg viewBox="0 0 24 24"><path d="M6 2L3 6v14a2 2 0 002 2h14a2 2 0 002-2V6l-3-4z"/><line x1="3" y1="6" x2="21" y2="6"/><path d="M16 10a4 4 0 01-8 0"/></svg>
+                  Comprar
+                </a>
+              </div>
+            </div>
+          </article>
+
+          <article class="eb-card" data-categoria="outros" data-reveal>
+            <div class="eb-thumb" style="background:linear-gradient(160deg,#001a0a,#0f0f0f)">
+              <img src="https://static-media.hotmart.com/XAkRfJDc4Cz5F6_6KRGuK1Kb5h0=/300x300/filters:quality(100)/hotmart/product_pictures/05d3c580-b61d-47c1-8dc6-3fcfe28ed6f6/CuidandodoSeuGato.png"
+                alt="Cuidando do Seu Gato"
+                style="display:none" onload="this.style.display='block';this.nextElementSibling.style.display='none'"
+                onerror="this.style.display='none';this.nextElementSibling.style.display='flex'">
+              <div class="eb-thumb-fb" style="display:flex">🐾</div>
+              <span class="eb-badge-cat" style="background:rgba(0,160,80,.9);color:#fff">Pets</span>
+            </div>
+            <div class="eb-body">
+              <div class="eb-cat-lbl" style="color:#00A152">🐾 Pets</div>
+              <h2 class="eb-title">Cuidando do Seu Gato</h2>
+              <p class="eb-promise">➜ Gato saudável e feliz todos os dias</p>
+              <p class="eb-desc">Tudo o que você precisa saber para cuidar bem do seu gato: alimentação, saúde, comportamento e muito mais.</p>
+              <div class="eb-tags">
+                <span class="eb-tag">Gatos</span>
+                <span class="eb-tag">Cuidados</span>
+                <span class="eb-tag">Pets</span>
+              </div>
+              <div class="eb-footer">
+                <div class="eb-price">
+                  <span class="eb-price-label">Preço</span>
+                  <strong>R$ 15</strong>
+                  <small>Acesso vitalício · Hotmart</small>
+                </div>
+                <a href="https://pay.hotmart.com/M104703779L" target="_blank" rel="noopener" class="eb-btn">
+                  <svg viewBox="0 0 24 24"><path d="M6 2L3 6v14a2 2 0 002 2h14a2 2 0 002-2V6l-3-4z"/><line x1="3" y1="6" x2="21" y2="6"/><path d="M16 10a4 4 0 01-8 0"/></svg>
+                  Comprar
+                </a>
+              </div>
+            </div>
+          </article>
+
+
+          <article class="eb-card" data-categoria="outros" data-reveal>
+            <div class="eb-thumb" style="background:linear-gradient(160deg,#0d001a,#0f0f0f)">
+              <img src="https://static-media.hotmart.com/OY94UkInbOSbAizkySMrt9Pu6XU=/300x300/filters:quality(100)/hotmart/product_pictures/a389e136-aeae-4da8-9234-c13017e3dfaf/DesenvolvimentoPessoalQuantum.png"
+                alt="Desenvolvimento Pessoal Quantum"
+                style="display:none" onload="this.style.display='block';this.nextElementSibling.style.display='none'"
+                onerror="this.style.display='none';this.nextElementSibling.style.display='flex'">
+              <div class="eb-thumb-fb" style="display:flex">🚀</div>
+              <span class="eb-badge-cat" style="background:rgba(232,0,29,.9);color:#fff">Mindset</span>
+            </div>
+            <div class="eb-body">
+              <div class="eb-cat-lbl">🚀 Mindset</div>
+              <h2 class="eb-title">Desenvolvimento Pessoal Quantum</h2>
+              <p class="eb-promise">➜ Evolua mais rápido do que imagina</p>
+              <p class="eb-desc">Acelere sua evolução pessoal com conceitos e práticas que transformam mentalidade, hábitos e resultados de forma rápida.</p>
+              <div class="eb-tags">
+                <span class="eb-tag">Mindset</span>
+                <span class="eb-tag">Hábitos</span>
+                <span class="eb-tag">Evolução</span>
+              </div>
+              <div class="eb-footer">
+                <div class="eb-price">
+                  <span class="eb-price-label">Preço</span>
+                  <strong>R$ 15</strong>
+                  <small>Acesso vitalício · Hotmart</small>
+                </div>
+                <a href="https://pay.hotmart.com/L104719742T" target="_blank" rel="noopener" class="eb-btn">
+                  <svg viewBox="0 0 24 24"><path d="M6 2L3 6v14a2 2 0 002 2h14a2 2 0 002-2V6l-3-4z"/><line x1="3" y1="6" x2="21" y2="6"/><path d="M16 10a4 4 0 01-8 0"/></svg>
+                  Comprar
+                </a>
+              </div>
+            </div>
+          </article>
+
+          <article class="eb-card" data-categoria="outros" data-reveal>
+            <div class="eb-thumb" style="background:linear-gradient(160deg,#0a001a,#0f0f0f)">
+              <img src="https://static-media.hotmart.com/pxK4dPMdfIMeBWLsIrKj-zjRSa4=/300x300/filters:quality(100)/hotmart/product_pictures/a9ac11f4-4a53-4c26-9d06-695570edd655/InteligenciaEmocionalRevelada.png"
+                alt="Inteligência Emocional Revelada"
+                style="display:none" onload="this.style.display='block';this.nextElementSibling.style.display='none'"
+                onerror="this.style.display='none';this.nextElementSibling.style.display='flex'">
+              <div class="eb-thumb-fb" style="display:flex">🧠</div>
+              <span class="eb-badge-cat" style="background:rgba(232,0,29,.9);color:#fff">Saúde Mental</span>
+            </div>
+            <div class="eb-body">
+              <div class="eb-cat-lbl">🧠 Saúde Mental</div>
+              <h2 class="eb-title">Inteligência Emocional Revelada</h2>
+              <p class="eb-promise">➜ Controle emoções, melhore tudo ao redor</p>
+              <p class="eb-desc">Desvende os segredos da inteligência emocional para controlar emoções, melhorar relacionamentos e tomar decisões melhores.</p>
+              <div class="eb-tags">
+                <span class="eb-tag">Emoções</span>
+                <span class="eb-tag">Autoconhecimento</span>
+                <span class="eb-tag">Relacionamentos</span>
+              </div>
+              <div class="eb-footer">
+                <div class="eb-price">
+                  <span class="eb-price-label">Preço</span>
+                  <strong>R$ 15</strong>
+                  <small>Acesso vitalício · Hotmart</small>
+                </div>
+                <a href="https://pay.hotmart.com/T104719951X" target="_blank" rel="noopener" class="eb-btn">
+                  <svg viewBox="0 0 24 24"><path d="M6 2L3 6v14a2 2 0 002 2h14a2 2 0 002-2V6l-3-4z"/><line x1="3" y1="6" x2="21" y2="6"/><path d="M16 10a4 4 0 01-8 0"/></svg>
+                  Comprar
+                </a>
+              </div>
+            </div>
+          </article>
+
+          <article class="eb-card" data-categoria="outros" data-reveal>
+            <div class="eb-thumb" style="background:linear-gradient(160deg,#001a0a,#0f0f0f)">
+              <img src="https://static-media.hotmart.com/K8g4VHMKBfJ-J0Sh2_Qeyl2x9Ho=/300x300/filters:quality(100)/hotmart/product_pictures/1e4b2f87-ed44-4c71-b34a-440a8016586c/TreinamentoSimplificadoParaCaes.png"
+                alt="Treinamento Simplificado Para Cães"
+                style="display:none" onload="this.style.display='block';this.nextElementSibling.style.display='none'"
+                onerror="this.style.display='none';this.nextElementSibling.style.display='flex'">
+              <div class="eb-thumb-fb" style="display:flex">🐕</div>
+              <span class="eb-badge-cat" style="background:rgba(0,160,80,.9);color:#fff">Pets</span>
+            </div>
+            <div class="eb-body">
+              <div class="eb-cat-lbl" style="color:#00A152">🐕 Pets</div>
+              <h2 class="eb-title">Treinamento Simplificado Para Cães</h2>
+              <p class="eb-promise">➜ Cão bem treinado sem gastar com adestrador</p>
+              <p class="eb-desc">Método simples e eficaz para treinar cães de qualquer raça ou idade, sem complicações e sem precisar de adestrador.</p>
+              <div class="eb-tags">
+                <span class="eb-tag">Cães</span>
+                <span class="eb-tag">Adestramento</span>
+                <span class="eb-tag">Pets</span>
+              </div>
+              <div class="eb-footer">
+                <div class="eb-price">
+                  <span class="eb-price-label">Preço</span>
+                  <strong>R$ 15</strong>
+                  <small>Acesso vitalício · Hotmart</small>
+                </div>
+                <a href="https://pay.hotmart.com/V104720056Y" target="_blank" rel="noopener" class="eb-btn">
+                  <svg viewBox="0 0 24 24"><path d="M6 2L3 6v14a2 2 0 002 2h14a2 2 0 002-2V6l-3-4z"/><line x1="3" y1="6" x2="21" y2="6"/><path d="M16 10a4 4 0 01-8 0"/></svg>
+                  Comprar
+                </a>
+              </div>
+            </div>
+          </article>
+
+          <!-- Estado vazio — aparece quando filtro não retorna resultados -->
+          <div class="empty-state" id="empty-placeholder" style="display:none">
+            <span style="font-size:56px;display:block">📚</span>
+            <h3>NENHUM EBOOK NESSA CATEGORIA</h3>
+            <p>Novos títulos chegando em breve. Confira as outras categorias.</p>
+            <a href="contato.html" class="btn btn-primary">💬 Falar Conosco</a>
+          </div>
+
+        </div>
+
+      </div>
+    </section>
+
+    <!-- CTA Pack -->
+  </main>
+
+  <!-- FOOTER -->
+  <footer role="contentinfo">
+    <div class="footer-top"><div class="container"><div class="footer-grid">
+      <div>
+        <a href="index.html" class="logo"><img src="assets/img/logo.png" alt="Store Invictus" class="logo-img" width="38" height="38"><div class="logo-text"><span class="logo-store">STORE</span><span class="logo-invictus">INVICT<span class="hl">US</span></span></div></a>
+        <p class="footer-desc">Ebooks digitais de qualidade para quem quer resultados reais no marketing digital e além.</p>
+        <div class="footer-social">
+          <a href="https://www.instagram.com/store_invictus7/" target="_blank" rel="noopener" class="soc-btn">📸</a>
+          <a href="https://www.tiktok.com/@store.invictus" target="_blank" rel="noopener" class="soc-btn">🎵</a>
+          <a href="https://wa.me/5512988060658" target="_blank" rel="noopener" class="soc-btn">💬</a>
+        </div>
+      </div>
+      <div class="footer-col"><h4>Loja</h4><nav class="foot-links"><a href="ebooks.html">Todos os Ebooks</a><a href="ebooks.html?cat=marketing">Marketing Digital</a><a href="ebooks.html?cat=trafego">Tráfego Pago</a></nav></div>
+      <div class="footer-col"><h4>Store Invictus</h4><nav class="foot-links"><a href="sobre.html">Sobre</a><a href="contato.html">Contato</a></nav></div>
+      <div class="footer-col"><h4>Legal</h4><nav class="foot-links"><a href="privacidade.html">Privacidade</a><a href="termos.html">Termos de Uso</a></nav></div>
+    </div></div></div>
+    <div class="footer-bottom"><div class="container"><div class="fbot-inner">
+      <span>© 2026 Store Invictus. Todos os direitos reservados.</span>
+      <span style="display:flex;align-items:center;gap:6px;font-size:11px;color:#555">🔒 Compra segura via <strong style="color:#777">Hotmart</strong></span>
+    </div></div></div>
+  </footer>
+
+    <a href="https://wa.me/5512988060658?text=Ol%C3%A1!%20Vim%20pelo%20site%20da%20Store%20Invictus." target="_blank" rel="noopener" class="wa-float" aria-label="WhatsApp">
+    <span class="wa-pulse"></span>
+    <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" style="width:28px;height:28px;fill:#fff;display:block;position:relative;z-index:1;flex-shrink:0"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347zm-5.421 7.403h-.004a10.17 10.17 0 01-5.458-1.57l-.39-.233-4.052.97.98-3.966-.255-.408A10.18 10.18 0 012.18 12.01C2.18 6.57 6.57 2.18 12.01 2.18c2.706 0 5.247 1.054 7.16 2.967a10.06 10.06 0 012.96 7.163c-.003 5.45-4.437 9.876-9.879 9.876zm8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+    <div class="wa-tip" aria-hidden="true">Tire suas dúvidas! 😊</div>
+  </a>
+
+  <script src="js/main.js" defer></script>
+  <script>
+  (function(){
+    'use strict';
+
+    const grid     = document.getElementById('ebooks-grid');
+    const filtros  = document.getElementById('filtros');
+    const countEl  = document.getElementById('count-num');
+    const placeholder = document.getElementById('empty-placeholder');
+
+    // Lê categoria da URL (?cat=xxx)
+    const params  = new URLSearchParams(location.search);
+    const catURL  = params.get('cat');
+
+    function getCards(){
+      return grid.querySelectorAll('.eb-card[data-categoria]');
+    }
+
+    function updateCount(cards, catAtiva){
+      let n = 0;
+      cards.forEach(c => {
+        if(catAtiva === 'todos' || c.dataset.categoria === catAtiva) n++;
+      });
+      countEl.textContent = n;
+      // Mostra/esconde placeholder
+      if(placeholder) placeholder.style.display = n === 0 ? 'block' : 'none';
+    }
+
+    function filtrar(cat){
+      const cards = getCards();
+      cards.forEach(c => {
+        const match = cat === 'todos' || c.dataset.categoria === cat;
+        c.classList.toggle('hidden', !match);
+      });
+      updateCount(cards, cat);
+
+      // Atualiza botões
+      filtros.querySelectorAll('.filtro-btn').forEach(b => {
+        b.classList.toggle('active', b.dataset.cat === cat);
+      });
+    }
+
+    // Eventos dos filtros
+    filtros.querySelectorAll('.filtro-btn').forEach(btn => {
+      btn.addEventListener('click', () => filtrar(btn.dataset.cat));
+    });
+
+    // Aplica categoria da URL ao carregar
+    if(catURL) {
+      filtrar(catURL);
+    } else {
+      filtrar('todos');
+    }
+
+    // Scroll reveal
+    if('IntersectionObserver' in window){
+      const ro = new IntersectionObserver(entries => {
+        entries.forEach(e => {
+          if(e.isIntersecting){ e.target.classList.add('revealed'); ro.unobserve(e.target); }
+        });
+      },{threshold:.08,rootMargin:'0px 0px -40px 0px'});
+      document.querySelectorAll('[data-reveal]').forEach(el => ro.observe(el));
+    }
+
+  })();
+  </script>
+</body>
+</html>

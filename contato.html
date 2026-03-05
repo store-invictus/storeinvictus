@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width,initial-scale=1.0"/>
+  <title>Contato | Store Invictus</title>
+  <link rel="icon" type="image/png" sizes="32x32" href="assets/img/logo.png">
+  <meta name="theme-color" content="#E8001D">
+  <meta name="description" content="Entre em contato com a Store Invictus pelo WhatsApp ou Instagram. Respondemos rápido.">
+  <meta name="robots" content="index, follow">
+  <link rel="canonical" href="https://storeinvictus.com.br/contato.html">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://storeinvictus.com.br/contato.html">
+  <meta property="og:title" content="Contato | Store Invictus">
+  <meta property="og:description" content="Entre em contato com a Store Invictus. Respondemos pelo WhatsApp rapidamente.">
+  <meta property="og:image" content="https://storeinvictus.com.br/assets/img/logo.png">
+  <meta property="og:locale" content="pt_BR">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=DM+Sans:wght@300;400;500;600;700;900&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css">
+  <style>
+    .page-hero{padding:150px 0 70px;position:relative;overflow:hidden;text-align:center}
+    .page-hero-inner{position:relative;z-index:1}
+    .page-hero h1{font-family:'Bebas Neue',sans-serif;font-size:clamp(42px,7vw,80px);letter-spacing:2px;margin:14px 0 16px;line-height:1.0}
+    .page-hero p{font-size:16px;color:#6e6e6e;max-width:520px;margin:0 auto;line-height:1.8}
+
+    /* Canais */
+    .canais-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:20px;margin-top:56px}
+    .canal-card{background:#0D0D0D;border:1px solid rgba(255,255,255,.05);border-radius:18px;padding:40px 28px;text-align:center;transition:all .3s;position:relative;overflow:hidden;text-decoration:none;color:#fff;display:flex;flex-direction:column;align-items:center}
+    .canal-card::before{content:'';position:absolute;top:0;left:0;right:0;height:2px;transform:scaleX(0);transform-origin:left;transition:transform .4s;background:var(--clr,#E8001D)}
+    .canal-card:hover{transform:translateY(-7px);border-color:rgba(232,0,29,.15)}
+    .canal-card:hover::before{transform:scaleX(1)}
+    .canal-icon{font-size:52px;display:block;margin-bottom:18px}
+    .canal-card h3{font-family:'Bebas Neue',sans-serif;font-size:24px;letter-spacing:1px;margin-bottom:8px}
+    .canal-card p{font-size:13.5px;color:#6e6e6e;line-height:1.7;margin-bottom:20px;flex:1}
+    .canal-btn{display:inline-flex;align-items:center;gap:8px;padding:10px 22px;border-radius:4px;font-size:12px;font-weight:700;letter-spacing:1px;text-transform:uppercase;transition:all .3s;text-decoration:none;background:var(--clr,#E8001D);color:#fff;box-shadow:0 4px 16px rgba(0,0,0,.3)}
+    .canal-btn:hover{transform:translateY(-2px);filter:brightness(1.1)}
+
+    /* FAQ */
+    .faq-list{display:flex;flex-direction:column;gap:12px;margin-top:48px}
+    .faq-item{background:#0D0D0D;border:1px solid rgba(255,255,255,.05);border-radius:12px;overflow:hidden}
+    .faq-btn{width:100%;display:flex;align-items:center;justify-content:space-between;padding:18px 22px;background:transparent;border:none;color:#fff;cursor:pointer;font-family:'DM Sans',sans-serif;font-size:15px;font-weight:600;text-align:left;transition:all .2s;gap:12px}
+    .faq-btn:hover{color:#FF1535}
+    .faq-btn.open{color:#FF1535}
+    .faq-icon{font-size:18px;flex-shrink:0;transition:transform .3s;color:#E8001D}
+    .faq-btn.open .faq-icon{transform:rotate(45deg)}
+    .faq-body{max-height:0;overflow:hidden;transition:max-height .35s ease}
+    .faq-body p{padding:0 22px 20px;font-size:14px;color:#6e6e6e;line-height:1.8}
+    .faq-body a{color:#FF1535}
+
+    @media(max-width:768px){.canais-grid{grid-template-columns:1fr}}
+  </style>
+</head>
+<body>
+  <a href="#main-content" class="skip-link">Ir para o conteúdo</a>
+  <nav class="navbar" id="navbar">
+    <div class="container nav-inner">
+      <a href="index.html" class="logo"><img src="assets/img/logo.png" alt="Store Invictus" class="logo-img" width="38" height="38"><div class="logo-text"><span class="logo-store">STORE</span><span class="logo-invictus">INVICT<span class="hl">US</span></span></div></a>
+      <ul class="nav-links">
+        <li><a href="index.html">Início</a></li>
+        <li><a href="ebooks.html">Ebooks</a></li>
+        <li><a href="sobre.html">Sobre</a></li>
+        <li><a href="contato.html" class="active">Contato</a></li>
+      </ul>
+      <button class="hamburger" id="hamburger" aria-label="Abrir menu" aria-expanded="false"><span></span><span></span><span></span></button>
+    </div>
+  </nav>
+  <nav class="mobile-menu" id="mobile-menu">
+    <a href="index.html">Início</a><a href="ebooks.html">Ebooks</a>
+    <a href="sobre.html">Sobre</a><a href="contato.html">Contato</a>
+    
+  </nav>
+
+  <main id="main-content">
+    <section class="page-hero">
+      <div class="bg-radials" aria-hidden="true"></div>
+      <div class="bg-grid" aria-hidden="true"></div>
+      <div class="page-hero-inner">
+        <span class="badge badge-R">Fale conosco</span>
+        <div class="div-line div-center"></div>
+        <h1>AINDA COM <span class="txt-grad">DÚVIDA?</span></h1>
+        <p>Fala com a gente. Te ajudamos a escolher o ebook certo para o seu momento — sem pressão, sem enrolação.</p>
+      </div>
+    </section>
+
+    <section class="section" style="padding-top:20px">
+      <div class="container">
+
+        <!-- Box de direcionamento -->
+        <div style="background:linear-gradient(135deg,rgba(232,0,29,.1),rgba(232,0,29,.04));border:1px solid rgba(232,0,29,.2);border-radius:16px;padding:32px 40px;display:flex;align-items:center;justify-content:space-between;gap:24px;flex-wrap:wrap;margin-bottom:48px" data-reveal>
+          <div>
+            <div style="font-size:11px;font-weight:700;letter-spacing:2px;text-transform:uppercase;color:#E8001D;margin-bottom:8px">💡 Não sabe qual ebook escolher?</div>
+            <p style="font-size:16px;font-weight:600;color:#fff;margin-bottom:6px">Descreva sua situação e a gente indica o mais certeiro</p>
+            <p style="font-size:13px;color:#6e6e6e">São só R$ 15 — mas queremos que você compre o que realmente vai usar.</p>
+          </div>
+          <a href="https://wa.me/5512988060658?text=Ol%C3%A1!%20Preciso%20de%20ajuda%20para%20escolher%20um%20ebook." target="_blank" rel="noopener" style="display:inline-flex;align-items:center;gap:8px;padding:14px 28px;border-radius:8px;background:#25D366;color:#fff;font-weight:800;font-size:13px;letter-spacing:.5px;text-transform:uppercase;text-decoration:none;white-space:nowrap;flex-shrink:0;box-shadow:0 4px 20px rgba(37,211,102,.35)">💬 Pedir Indicação</a>
+        </div>
+
+                <div class="canais-grid">
+          <a href="https://wa.me/5512988060658?text=Ol%C3%A1!%20Vim%20pelo%20site%20da%20Store%20Invictus%20e%20gostaria%20de%20tirar%20uma%20d%C3%BAvida." target="_blank" rel="noopener" class="canal-card" style="--clr:#25D366" data-reveal>
+            <span class="canal-icon">💬</span>
+            <h3>WHATSAPP</h3>
+            <p>Canal mais rápido. Tem dúvida sobre qual ebook escolher? Manda mensagem — te indicamos o certo para o seu caso.</p>
+            <span class="canal-btn" style="background:#25D366">Chamar no WhatsApp →</span>
+          </a>
+          <a href="https://www.instagram.com/store_invictus7/" target="_blank" rel="noopener" class="canal-card" style="--clr:#E4405F" data-reveal style="animation-delay:100ms">
+            <span class="canal-icon">📸</span>
+            <h3>INSTAGRAM</h3>
+            <p>Nos acompanhe para conteúdo diário sobre marketing digital, dicas e novidades do catálogo.</p>
+            <span class="canal-btn" style="background:linear-gradient(135deg,#E4405F,#833AB4)">Ver no Instagram →</span>
+          </a>
+          <a href="https://www.tiktok.com/@store.invictus" target="_blank" rel="noopener" class="canal-card" style="--clr:#000" data-reveal style="animation-delay:200ms">
+            <span class="canal-icon">🎵</span>
+            <h3>TIKTOK</h3>
+            <p>Conteúdo rápido e prático sobre marketing digital. Dicas aplicáveis em menos de 60 segundos.</p>
+            <span class="canal-btn" style="background:#111;border:1px solid rgba(255,255,255,.15)">Ver no TikTok →</span>
+          </a>
+        </div>
+
+        <!-- FAQ -->
+        <div style="margin-top:100px" id="faq">
+          <div style="text-align:center" data-reveal>
+            <span class="badge badge-G">Dúvidas frequentes</span>
+            <div class="div-line div-center"></div>
+            <h2 style="font-family:'Bebas Neue',sans-serif;font-size:clamp(32px,4.5vw,56px);letter-spacing:1px">PERGUNTAS <span class="txt-grad">FREQUENTES</span></h2>
+          </div>
+          <div class="faq-list" data-reveal>
+
+            <div class="faq-item">
+              <button class="faq-btn" aria-expanded="false">Como funciona a Store Invictus?<span class="faq-icon">+</span></button>
+              <div class="faq-body"><p>Somos uma loja de ebooks digitais próprios. Todo conteúdo é desenvolvido pela Store Invictus e vendido diretamente pela Hotmart. Ao comprar, você recebe acesso imediato ao material.</p></div>
+            </div>
+
+            <div class="faq-item">
+              <button class="faq-btn" aria-expanded="false">Os produtos têm garantia?<span class="faq-icon">+</span></button>
+              <div class="faq-body"><p>Sim. Todos os ebooks possuem garantia de 7 dias pela Hotmart. Caso não fique satisfeito, basta solicitar o reembolso diretamente na plataforma.</p></div>
+            </div>
+
+            <div class="faq-item">
+              <button class="faq-btn" aria-expanded="false">Como acesso o produto após a compra?<span class="faq-icon">+</span></button>
+              <div class="faq-body"><p>Após a compra, você recebe um email da Hotmart com o acesso. Em caso de dúvidas, entre em contato com o suporte da Hotmart ou <a href="https://wa.me/5512988060658" target="_blank" rel="noopener">nos mande uma mensagem no WhatsApp</a> que te ajudamos.</p></div>
+            </div>
+
+            <div class="faq-item">
+              <button class="faq-btn" aria-expanded="false">Por quanto tempo tenho acesso ao conteúdo?<span class="faq-icon">+</span></button>
+              <div class="faq-body"><p>A maioria dos produtos oferece acesso vitalício — você compra uma vez e acessa para sempre. Verifique as condições específicas de cada produto na página de checkout da plataforma.</p></div>
+            </div>
+
+          </div>
+        </div>
+
+      </div>
+    </section>
+  </main>
+
+  <footer role="contentinfo">
+    <div class="footer-top"><div class="container"><div class="footer-grid">
+      <div><a href="index.html" class="logo"><img src="assets/img/logo.png" alt="Store Invictus" class="logo-img" width="38" height="38"><div class="logo-text"><span class="logo-store">STORE</span><span class="logo-invictus">INVICT<span class="hl">US</span></span></div></a><p class="footer-desc">Ebooks digitais de qualidade para quem quer resultados reais.</p><div class="footer-social"><a href="https://www.instagram.com/store_invictus7/" target="_blank" rel="noopener" class="soc-btn">📸</a><a href="https://www.tiktok.com/@store.invictus" target="_blank" rel="noopener" class="soc-btn">🎵</a><a href="https://wa.me/5512988060658" target="_blank" rel="noopener" class="soc-btn">💬</a></div></div>
+      <div class="footer-col"><h4>Loja</h4><nav class="foot-links"><a href="ebooks.html">Todos os Ebooks</a></nav></div>
+      <div class="footer-col"><h4>Store Invictus</h4><nav class="foot-links"><a href="sobre.html">Sobre</a><a href="contato.html">Contato</a></nav></div>
+      <div class="footer-col"><h4>Legal</h4><nav class="foot-links"><a href="privacidade.html">Privacidade</a><a href="termos.html">Termos</a></nav></div>
+    </div></div></div>
+    <div class="footer-bottom"><div class="container"><div class="fbot-inner"><span>© 2026 Store Invictus. Todos os direitos reservados.</span><span style="display:flex;align-items:center;gap:6px;font-size:11px;color:#555">🔒 Compra segura via <strong style="color:#777">Hotmart</strong></span></div></div></div>
+  </footer>
+
+    <a href="https://wa.me/5512988060658?text=Ol%C3%A1!%20Vim%20pelo%20site%20da%20Store%20Invictus." target="_blank" rel="noopener" class="wa-float" aria-label="WhatsApp">
+    <span class="wa-pulse"></span>
+    <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" style="width:28px;height:28px;fill:#fff;display:block;position:relative;z-index:1;flex-shrink:0"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347zm-5.421 7.403h-.004a10.17 10.17 0 01-5.458-1.57l-.39-.233-4.052.97.98-3.966-.255-.408A10.18 10.18 0 012.18 12.01C2.18 6.57 6.57 2.18 12.01 2.18c2.706 0 5.247 1.054 7.16 2.967a10.06 10.06 0 012.96 7.163c-.003 5.45-4.437 9.876-9.879 9.876zm8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+    <div class="wa-tip" aria-hidden="true">Tire suas dúvidas! 😊</div>
+  </a>
+
+  <script src="js/main.js" defer></script>
+  <script>
+    // FAQ accordion
+    document.querySelectorAll('.faq-btn').forEach(btn=>{
+      btn.addEventListener('click',()=>{
+        const isOpen=btn.classList.contains('open');
+        document.querySelectorAll('.faq-btn').forEach(b=>{b.classList.remove('open');b.setAttribute('aria-expanded','false');b.nextElementSibling.style.maxHeight='0'});
+        if(!isOpen){btn.classList.add('open');btn.setAttribute('aria-expanded','true');btn.nextElementSibling.style.maxHeight=btn.nextElementSibling.scrollHeight+34+'px'}
+      });
+    });
+  </script>
+</body>
+</html>
